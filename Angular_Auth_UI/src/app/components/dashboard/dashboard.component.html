@@ -1,0 +1,18 @@
+<button class="btn btn-danger" (click)="logOut()">Log out</button>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">Angular Auth</a>
+        <a [routerLink]="['/cart']">Cart<span>0</span></a>
+
+        <div>
+            <h4>Hello, {{fullName}}</h4>
+        </div>
+    </div>
+</nav>
+<a [routerLink]="['/products']">products</a>
+<ng-container *ngIf="role === 'Admin'">
+    <ul *ngFor="let user of users">
+        <li>{{user.username}}</li>
+    </ul>
+</ng-container>
+<app-products></app-products>

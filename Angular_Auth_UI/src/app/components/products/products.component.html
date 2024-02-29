@@ -1,0 +1,43 @@
+<!-- <ul>
+    <ng-container *ngFor="let product of (products | async)">
+        <li>{{product.title}}</li>
+        <app-product-card [product]="product"></app-product-card>
+
+    </ng-container>
+    
+</ul> -->
+
+<!-- @for (item of products; track $index) {
+    <app-product-card [product]="item"></app-product-card>
+} -->
+<!-- @for (item of (products | async; track $index) { 
+
+}-->
+<!-- <app-product-card [product]=""></app-product-card> -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <ng-container *ngFor="let product of (products | async)">
+                    <p><app-product-card [product]="product"></app-product-card></p>
+                </ng-container>
+                <p *ngFor="let product of (products | async)">
+                    <app-product-card [product]="product"></app-product-card>
+                </p>
+            </div>
+        </div>    
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+      <ng-container *ngFor="let product of (products | async)">
+        <div class="col-3 mb-4" style="margin-bottom: 20px;">
+          <div class="card">
+            <app-product-card [product]="product" (handleAdd)="addItemToCart($event)"></app-product-card>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  

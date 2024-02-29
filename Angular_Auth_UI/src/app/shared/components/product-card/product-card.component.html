@@ -1,0 +1,17 @@
+<div class="card-body" style="background-color: #6e6ef6;">
+    <img class="card-img-top" style="width: 200px; height: 200px; object-fit: cover; display: block; margin: 0 auto;"
+        [src]="product.image" alt="Sunset in the mountains">
+    <div class="px-6 py-4">
+        <div class="font-bold card-title">{{product.title}}</div>
+        <p class="card-text">
+            {{product.description.substring(0,1000)}}...
+        </p>
+    </div>
+    <div>
+        <span>{{product.price | currency}}</span>
+    </div>
+    <div>
+        <button type="button" (click)="addToCart(product)" class="btn btn-primary" style="background-color: green;">Add to Cart</button>
+        <button type="button" class="btn btn-primary" style="background-color: yellow;">View Product</button>
+    </div>
+</div>
